@@ -7,6 +7,7 @@ A bare bones starter code to begin with.
 import sys
 from PyQt6.QtWidgets import (
     QApplication,
+    QComboBox,
     QLabel,
     QMainWindow,
     QVBoxLayout,
@@ -25,8 +26,12 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
         title_label = QLabel("Title Label (Make this bigger, please!)")
 
+        self.app_options_combo = QComboBox()
+        self.app_options_combo.addItems(["Meal info", "Exercise info"])
+
         # add widgets & layouts to main layout
         layout.addWidget(title_label)
+        layout.addWidget(self.app_options_combo)
 
         # [OPTIONAL] Add a stretch to move everything up
         layout.addStretch()
