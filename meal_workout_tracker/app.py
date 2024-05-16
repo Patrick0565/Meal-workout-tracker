@@ -5,6 +5,7 @@ A bare bones starter code to begin with.
 """
 
 import sys
+from workout_edit import WorkoutEdit
 from PyQt6.QtWidgets import (
     QApplication,
     QComboBox,
@@ -27,11 +28,15 @@ class MainWindow(QMainWindow):
         title_label = QLabel("Title Label (Make this bigger, please!)")
 
         self.app_options_combo = QComboBox()
-        self.app_options_combo.addItems(["Meal info", "Exercise info"])
+        self.app_options_combo.addItems(["Meal info", "Workout info"])
+
+        self.workout_edit = WorkoutEdit()
 
         # add widgets & layouts to main layout
         layout.addWidget(title_label)
         layout.addWidget(self.app_options_combo)
+
+        layout.addWidget(self.workout_edit)
 
         # [OPTIONAL] Add a stretch to move everything up
         layout.addStretch()
