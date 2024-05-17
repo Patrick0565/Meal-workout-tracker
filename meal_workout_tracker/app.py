@@ -25,10 +25,10 @@ class MainWindow(QMainWindow):
         self.resize(320, 240)
 
         layout = QVBoxLayout()
-        title_label = QLabel("Title Label (Make this bigger, please!)")
+        title_label = QLabel("Workout Tracker")
 
         self.app_options_combo = QComboBox()
-        self.app_options_combo.addItems(["Meal info", "Workout info"])
+        self.app_options_combo.addItems(["Home", "Meals info", "Workout info"])
 
         self.workout_edit = WorkoutEdit()
 
