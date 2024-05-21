@@ -10,6 +10,8 @@ from PyQt6.QtWidgets import (
     QWidget,
     QFormLayout,
     QPushButton,
+    QHBoxLayout,
+    QComboBox,
 )
 
 
@@ -27,9 +29,19 @@ class WorkoutEdit(QWidget):
         layout.addRow("Start time: ", QLineEdit())
         layout.addRow("Notes: ", QLineEdit())
 
-        button = QPushButton("Cancel", self)
-
-    
+        button_layout = QHBoxLayout()
+        
+        cancel_button = QPushButton("Cancel", self)
+        add_button = QPushButton("Add", self)
+        enter_button = QPushButton("Enter", self)
+        
+        button_layout.addWidget(cancel_button)
+        button_layout.addWidget(add_button)
+        button_layout.addWidget(enter_button)
+        
+        layout.addRow(button_layout)
 
         widget = QWidget()
         self.setLayout(layout)
+
+
