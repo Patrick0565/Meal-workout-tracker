@@ -7,6 +7,7 @@ A bare bones starter code to begin with.
 import sys
 from homepage import HomePageWidget
 from workout_edit import WorkoutEdit
+from workouts import WorkoutsWidget
 from PyQt6.QtWidgets import (
     QApplication,
     QComboBox,
@@ -32,16 +33,19 @@ class MainWindow(QMainWindow):
         dropdown_layout = QVBoxLayout()
         title_label = QLabel("Workout Tracker")
         self.app_options_combo = QComboBox()
-        self.app_options_combo.addItems(["Home", "Meals info", "Workout info"])
+        self.app_options_combo.addItems(["Home", "Meals info", "Workout info", "Add workout"])
         dropdown_layout.addWidget(title_label)
         dropdown_layout.addWidget(self.app_options_combo)
 
         # Create widget layout
         widget_layout = QVBoxLayout()
         self.workout_edit = WorkoutEdit()
-        self.home_page = HomePageWidget()  # Create an instance of HomePageWidget
+        self.home_page = HomePageWidget() 
+        self.workouts = WorkoutsWidget() 
         widget_layout.addWidget(self.home_page)
         self.home_page.setVisible(True)
+        widget_layout.addWidget(self.workouts)
+        self.workouts.setVisible(False)
         widget_layout.addWidget(self.workout_edit)
         self.workout_edit.setVisible(False)
 
@@ -61,15 +65,22 @@ class MainWindow(QMainWindow):
         self.app_options_combo.currentIndexChanged.connect(self.show_hide_widgets)
 
     def show_hide_widgets(self, index):
-        if index == 0:  # Index 0 corresponds to "Home"
+        if index == 0:  
             self.home_page.setVisible(True)
+            self.workouts.setVisible(False)
             self.workout_edit.setVisible(False)
-        elif index == 2:  # Index 2 corresponds to "Workout info"
+        elif index == 2:  
+            self.home_page.setVisible(False)
+            self.workouts.setVisible(True)
+            self.workout_edit.setVisible(False)
+        elif index == 3:  
             self.home_page.setVisible(False)
             self.workout_edit.setVisible(True)
+            self.workouts.setVisible(False)
         else:
             self.home_page.setVisible(False)
             self.workout_edit.setVisible(False)
+            self.workouts.setVisible(False)
 
 
 if __name__ == "__main__":
