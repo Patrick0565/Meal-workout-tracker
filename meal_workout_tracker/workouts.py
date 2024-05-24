@@ -13,7 +13,8 @@ class WorkoutsWidget(QWidget):
         
         # Create QLabel widgets with the greeting message and instructions
         title_label = QLabel("Your workouts")
-        
+        self.setStyleSheet("color: #76ABAE")
+
         self.workout_details = QTextEdit()
         
 
@@ -30,5 +31,5 @@ class WorkoutsWidget(QWidget):
         self.setLayout(layout)
 
     def load_workouts(self):
-        workout_data = controller.get_workout_list()
+        workout_data = controller.get_workouts()
         self.workout_details.setHtml(workout_data)

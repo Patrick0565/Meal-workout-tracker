@@ -1,6 +1,1 @@
-[
-    {"title": "Sample workout", 
-    "type": "Bench",
-    "start_time": "16:00",
-    "notes": "low reps"}
-]
+[{"title": "Chest day", "type": "Bench", "start_time": "12:00 AM", "notes": "go super heavy"}, {"title": "Back", "type": "pullups", "start_time": "12:00 AM", "notes": "high rep"}]

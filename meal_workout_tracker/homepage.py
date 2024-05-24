@@ -24,7 +24,7 @@ class HomePageWidget(QWidget):
         instruction_label5 = QLabel("- You can add exercises to your workouts. (ex: Bench press, Push-ups)")
         instruction_label6 = QLabel("- You can also add the time to begin your workout. (ex: 16:15)")
         instruction_label7 = QLabel("- And finally, you can add notes to each workout. (ex: Do high weight, and low reps.)")
-
+        self.setStyleSheet("color: #76ABAE")
 
         # Set up the layout
         layout = QVBoxLayout()
